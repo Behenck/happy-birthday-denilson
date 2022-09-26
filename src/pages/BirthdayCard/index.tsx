@@ -29,13 +29,15 @@ export function BirthdayCard() {
   )
 
   useEffect(() => {
-    getFriend(window.location.pathname.split('/')[1]).then(({ data }: any) => {
-      setFriend(data)
-    })
+    getFriend(window.location.search.split('?friendId=')[1]).then(
+      ({ data }: any) => {
+        setFriend(data)
+      },
+    )
   }, [])
 
   function handleChangeAttendanceConfirmation() {
-    setConfirmationFriend(window.location.pathname.split('/')[1]).then(
+    setConfirmationFriend(window.location.search.split('?friendId=')[1]).then(
       (data) => {
         setFriend((state) => ({
           ...state,
