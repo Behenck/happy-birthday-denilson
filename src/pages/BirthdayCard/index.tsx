@@ -84,7 +84,7 @@ export function BirthdayCard() {
           <p>
             var <VariavelText>data</VariavelText> = "30/09"
           </p>
-          <CodeComment>// Tem um coqueiro na frente</CodeComment>
+          <CodeComment>// Tem um coqueiro na frente!</CodeComment>
         </div>
         <div>
           <p>
