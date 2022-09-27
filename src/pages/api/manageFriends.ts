@@ -1,5 +1,6 @@
 import { fauna } from '../../services/fauna'
 import { query as q } from 'faunadb'
+import { v4 as uuidV4 } from 'uuid'
 
 type Friend = {
   data: {
@@ -46,4 +47,16 @@ export async function getFriends() {
     q.Paginate(q.Match(q.Index('all_friends'))),
   )
   return data
+}
+
+export async function createFriend(name: string) {
+  await fauna.query(
+    q.Create(q.Collection('Friends'), {
+      data: {
+        id: uuidV4(),
+        name,
+        confirmation: false,
+      },
+    }),
+  )
 }

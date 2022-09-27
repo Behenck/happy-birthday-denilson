@@ -9,19 +9,19 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+`
 
-    button {
-      border: 1px solid ${(props) => props.theme['blue-100']};
-      color: ${(props) => props.theme['blue-100']};
-      background: transparent;
-      border-radius: 6px;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
+export const NewFriendButton = styled.button`
+  border: 1px solid ${(props) => props.theme['blue-100']};
+  color: ${(props) => props.theme['blue-100']};
+  background: transparent;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 
-      &:hover {
-        filter: brightness(0.9);
-      }
-    }
+  &:hover {
+    filter: brightness(0.9);
   }
 `
 

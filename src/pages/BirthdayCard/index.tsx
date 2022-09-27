@@ -45,9 +45,9 @@ export function BirthdayCard() {
         }))
 
         if (data.data.confirmation) {
-          toast.success('Esperamos você lá! 🎉')
-        } else {
           toast.error('Você desmarcou a presença! 😢')
+        } else {
+          toast.success('Esperamos você lá! 🎉')
         }
       },
     )
@@ -79,24 +79,25 @@ export function BirthdayCard() {
       <p>
         Olá, <strong>{friend.name}</strong>
       </p>
-      <p>Irei comemorar meu aniverário e espero que venha comemorar junto!</p>
+      <p>Irei comemorar meu aniversário e espero que venha comemorar junto!</p>
 
       <CodeContent>
         <div>
           <p>
             var <VariavelText>data</VariavelText> = "30/09"
           </p>
-          <CodeComment>// Tem um coqueiro na frente!</CodeComment>
+          <CodeComment>// Agora sexta</CodeComment>
         </div>
         <div>
           <p>
-            var <VariavelText>horario</VariavelText> = "20:00h"{' '}
+            var <VariavelText>horario</VariavelText> = "19:30h"{' '}
           </p>
           <CodeComment>// Seja pontual</CodeComment>
         </div>
         <div>
           <p>
-            var <VariavelText>endereco</VariavelText> = "Rua dos Bobos, 0"
+            var <VariavelText>endereco</VariavelText> = "Av. Setembrino de
+            Carvalho, 2610"
           </p>
           <CodeComment>//Perto do Quartel 8º</CodeComment>
         </div>
@@ -105,18 +106,18 @@ export function BirthdayCard() {
             <Let>let</Let> <VariavelText>local</VariavelText> = "Berlin
             Pizzaria"
           </p>
-          <CodeComment>// Tem um coqueiro na frente</CodeComment>
+          <CodeComment>// Vamos comer rodízio</CodeComment>
         </div>
       </CodeContent>
 
       {friend.confirmation ? (
-        <ConfirmButton onClick={handleChangeAttendanceConfirmation}>
-          CONFIRMAR PRESENÇA
-        </ConfirmButton>
-      ) : (
         <CanceledButton onClick={handleChangeAttendanceConfirmation}>
           CANCELAR PRESENÇA
         </CanceledButton>
+      ) : (
+        <ConfirmButton onClick={handleChangeAttendanceConfirmation}>
+          CONFIRMAR PRESENÇA
+        </ConfirmButton>
       )}
     </BirthdayCardContainer>
   )

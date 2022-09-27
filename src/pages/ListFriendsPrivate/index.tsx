@@ -7,8 +7,11 @@ import {
   ConfirmedButton,
   Container,
   FriendsTable,
+  NewFriendButton,
 } from './styles'
 import toast, { Toaster } from 'react-hot-toast'
+import * as Dialog from '@radix-ui/react-dialog'
+import { NewFriendModal } from '../../components/NewFriendModal'
 
 interface Friend {
   id: string
@@ -37,7 +40,14 @@ export function ListFriendsPrivate() {
       <Toaster />
       <header>
         <h1>Listar Amigos</h1>
-        <button>Novo Convidado</button>
+
+        <Dialog.Root>
+          <Dialog.Trigger asChild>
+            <NewFriendButton>Novo convidado</NewFriendButton>
+          </Dialog.Trigger>
+
+          <NewFriendModal />
+        </Dialog.Root>
       </header>
 
       <FriendsTable>
@@ -47,7 +57,7 @@ export function ListFriendsPrivate() {
               <tr key={friend[0]}>
                 <td width="70%">{friend[1]}</td>
                 <td>
-                  {friend[2] === false ? (
+                  {friend[2] === true ? (
                     <ConfirmedButton>Confirmado</ConfirmedButton>
                   ) : (
                     <PendingButton>Aguardando</PendingButton>
