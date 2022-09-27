@@ -12,7 +12,7 @@ type Friend = {
   }[]
 }
 
-export async function getFriend(id: string) {
+export async function getFriendById(id: string) {
   const { data } = await fauna.query<Friend>(
     q.Map(
       q.Paginate(q.Match(q.Index('friend_by_id'), id)),
@@ -39,4 +39,11 @@ export async function setConfirmationFriend(id: string) {
   )
 
   return data[0]
+}
+
+export async function getFriends() {
+  const { data } = await fauna.query<Friend>(
+    q.Paginate(q.Match(q.Index('all_friends'))),
+  )
+  return data
 }

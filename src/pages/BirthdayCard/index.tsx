@@ -14,7 +14,7 @@ import { AiFillStar } from 'react-icons/ai'
 import { FaCrown } from 'react-icons/fa'
 import birthday from '../../assets/birthday.png'
 import { useEffect, useState } from 'react'
-import { getFriend, setConfirmationFriend } from '../api/manageFriends'
+import { getFriendById, setConfirmationFriend } from '../api/manageFriends'
 import toast, { Toaster } from 'react-hot-toast'
 
 interface BirthdayCardProps {
@@ -29,7 +29,7 @@ export function BirthdayCard() {
   )
 
   useEffect(() => {
-    getFriend(window.location.search.split('?friendId=')[1]).then(
+    getFriendById(window.location.search.split('?friendId=')[1]).then(
       ({ data }: any) => {
         setFriend(data)
       },
