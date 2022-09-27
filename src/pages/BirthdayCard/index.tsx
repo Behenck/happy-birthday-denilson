@@ -106,7 +106,7 @@ export function BirthdayCard() {
             <Let>let</Let> <VariavelText>local</VariavelText> = "Berlin
             Pizzaria"
           </p>
-          <CodeComment>// Vamos comer rodízio</CodeComment>
+          <CodeComment>// Vai ser rodízio de pizza</CodeComment>
         </div>
       </CodeContent>
 
