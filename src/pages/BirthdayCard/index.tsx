@@ -1,3 +1,7 @@
+// add this block comment in the first line
+// it must be a BLOCK comment!!!
+
+/* eslint-disable */
 import {
   Age,
   BirthdayCardContainer,
@@ -61,26 +65,21 @@ export function BirthdayCard() {
         <AiFillStar size={36} />
         <AiFillStar size={16} />
       </Stars>
-
       <FaCrown size={72} />
-
       <Age>
         <h1>
           22
           <span>y</span>
         </h1>
       </Age>
-
       <HappyBirthday>
         <img src={birthday} alt="" />
         <h1>Denilson, 22 anos</h1>
       </HappyBirthday>
-
       <p>
         Olá, <strong>{friend.name}</strong>
       </p>
       <p>Irei comemorar meu aniversário e espero que venha comemorar junto!</p>
-
       <CodeContent>
         <div>
           <p>
@@ -109,7 +108,6 @@ export function BirthdayCard() {
           <CodeComment>// Vai ser rodízio de pizza</CodeComment>
         </div>
       </CodeContent>
-
       {friend.confirmation ? (
         <CanceledButton onClick={handleChangeAttendanceConfirmation}>
           CANCELAR PRESENÇA
